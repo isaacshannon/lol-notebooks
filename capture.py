@@ -14,30 +14,21 @@ def make_dirs(directory):
         pass
 
     try:
-        os.makedirs(directory + "/full-pilled")
-    except:
-        pass
-
-    try:
         os.makedirs(directory + "/team")
     except:
         pass
 
-    try:
-        os.makedirs(directory + "/team-pilled")
-    except:
-        pass
-
 def capture():
-    teams = "fla_ryl_worlds_2019"
+    teams = "dfm_spy_worlds_2019"
     directory = "games/" + teams
     make_dirs(directory)
 
     sleep(5)
 
-    for i in range(1500):
-        call(["screencapture",  "-R815,665,150,150", "-x", f"{directory}/full/{teams}_{i}.png"])
-        call(["screencapture", "-R1800,675,150,150", "-x", f"{directory}/team/{teams}_{i}.png"])
+    for i in range(1200):
+        seq = format(i, '010d')
+        call(["screencapture",  "-R815,665,150,150", "-x", f"{directory}/full/{teams}_{seq}.png"])
+        call(["screencapture", "-R1770,675,150,150", "-x", f"{directory}/team/{teams}_{seq}.png"])
         sleep(1)
 
 capture()
