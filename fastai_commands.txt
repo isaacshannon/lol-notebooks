@@ -1,0 +1,14 @@
+fe2 price-demand p3
+fe2 stop lol
+fe2 launch lol ami-031c6ea16a0c7334f 50 p2.xlarge
+
+ssh -i ~/.ssh/fastai.pem -L localhost:8888:localhost:8888 ubuntu@18.191.200.197
+
+aws ec2 stop-instances --instance-ids i-034c4fcd90c811746
+
+aws ec2 start-instances --instance-ids i-034c4fcd90c811746
+aws ec2 describe-instances --instance-ids i-034c4fcd90c811746
+
+conda install -c fastai fastai pytorch torchvision cuda92
+
+source activate python3

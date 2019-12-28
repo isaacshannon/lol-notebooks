@@ -4,6 +4,7 @@ import csv
 import os, shutil
 import random
 
+
 # The splitter separates the images which have player coordinates into 10x10px images for training.
 def split(filename, player_grids, k):
     s = 0

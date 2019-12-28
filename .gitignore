@@ -5,3 +5,5 @@
 /pills
 *.png
 *.jpg
+*.pth
+.ipynb_checkpoints/

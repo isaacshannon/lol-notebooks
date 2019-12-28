@@ -43,3 +43,7 @@ Dec. 5th
     27	0.024869	0.098493	0.930728	0.733907	00:45
     28	0.023920	0.098311	0.930546	0.734447	00:45
     29	0.023586	0.098544	0.931165	0.735047	00:45
+
+Dec. 28th
+    I built the desktop AI machine. Excellent results were achieved at predicting if a small 10x10 image has a player
+    when a 30x30 image is used to guess if the center 10x10 has a player.
