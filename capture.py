@@ -31,25 +31,27 @@ def capture():
     make_dirs(directory)
     random.seed()
 
-    # sleep(1)
-
-    for i in range(1):
-        j0 = str(random.randrange(0, 6))
-        j1 = str(random.randrange(2, 8))
-        j2 = str(random.randrange(46, 54))
-        j3 = str(random.randrange(76, 84))
+    for i in range(5):
         seq = format(i, '010d')
-        im2 = pyscreenshot.grab(bbox=(0, 0, 300, 300))
-        im2.save("test.jpg")
 
-        # call(["screencapture",  f"-R80{j0},57{j1},150,150", "-x", f"{directory}/full/{teams}_{seq}.png"])
-        # call(["screencapture", f"-R17{j2},5{j3},150,150", "-x", f"{directory}/team/{teams}_{seq}.png"])
+        full_x = random.randrange(800, 806)
+        full_y = random.randrange(572, 578)
+        im_full = pyscreenshot.grab(bbox=(full_x, full_y, full_x + 150, full_y + 150))
+        im_full.save(f"{directory}/full/{teams}_{seq}.png")
+
+        team_x = random.randrange(1746, 1754)
+        team_y = random.randrange(576, 584)
+        im_team = pyscreenshot.grab(bbox=(team_x, team_y, team_x + 150, team_y + 150))
+        im_team.save(f"{directory}/team/{teams}_{seq}.png")
+
+        print(f"screenshot: {i}")
         sleep(1)
 
-    # files = os.listdir(directory+"/full")
-    # fileIndexes = random.sample(range(0, len(files)), 10)
-    # for i in fileIndexes:
-    #     copyfile(directory+"/full/"+files[i], "coordinates/unlabeled/"+files[i])
+    # Grab a small sample of the screenshots to feed into 10x10 player locator.
+    files = os.listdir(directory + "/full")
+    file_indexes = random.sample(range(0, len(files)), 10)
+    for i in file_indexes:
+        copyfile(directory + "/full/" + files[i], "coordinates/unlabeled/" + files[i])
 
 
 capture()
