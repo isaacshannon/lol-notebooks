@@ -11,11 +11,12 @@ def split(filename, player_grids, k):
 
     height = 10
     width = 10
+    padding = 5 # Take a bigger image than the 10x10 box to make identification easier
     im = Image.open(f"./coordinate_images/{filename}")
     imgwidth, imgheight = im.size
     for i in range(0, imgheight, height):
         for j in range(0, imgwidth, width):
-            box = (j, i, j + width, i + height)
+            box = (j-padding, i-padding, j + width+padding, i + height + padding)
             a = im.crop(box)
             try:
                 type = "terrain"
