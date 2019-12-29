@@ -4,14 +4,14 @@ import os, shutil
 import random
 
 
-# The splitter separates the images which have player coordinates into 10x10px images for training.
+# The splitter separates the images which have player locator into 10x10px images for training.
 def split(file, player_grids, k):
     s = 0
     grids = [int(i) for i in player_grids.split(" ")]
 
     height = 10
     width = 10
-    padding = 5  # Take a bigger image than the 10x10 box to make identification easier
+    padding = 10  # Take a bigger image than the 10x10 box to make identification easier
     im = Image.open(f"./coordinate_images/{file}")
     img_width, img_height = im.size
     for i in range(0, img_height, height):
