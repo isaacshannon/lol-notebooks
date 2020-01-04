@@ -1,3 +1,4 @@
+import time
 from time import sleep
 import os
 import pyscreenshot
@@ -26,16 +27,22 @@ def make_dirs(directory):
 
 
 def capture():
-    teams = "test"
+    teams = "ig_tl_1_worlds_oct_20_2019"
+    num_shots = 900
     directory = "games/" + teams
     make_dirs(directory)
+    if len(os.listdir(directory)) > 100:
+        print("The game directory isn't empty!!!")
+        return
     random.seed()
-
-    for i in range(5):
+    # 30 minutes 1200
+    for i in range(num_shots):
         seq = format(i, '010d')
 
-        full_x = random.randrange(800, 806)
-        full_y = random.randrange(572, 578)
+        # full_x = random.randrange(800, 806)
+        # full_y = random.randrange(572, 578)
+        full_x = random.randrange(835, 841)
+        full_y = random.randrange(583, 589)
         im_full = pyscreenshot.grab(bbox=(full_x, full_y, full_x + 150, full_y + 150))
         im_full.save(f"{directory}/full/{teams}_{seq}.png")
 
@@ -51,7 +58,7 @@ def capture():
     files = os.listdir(directory + "/full")
     file_indexes = random.sample(range(0, len(files)), 10)
     for i in file_indexes:
-        copyfile(directory + "/full/" + files[i], "coordinates/unlabeled/" + files[i])
+        copyfile(directory + "/full/" + files[i], "locator/unlabeled/" + files[i])
 
 
 capture()
