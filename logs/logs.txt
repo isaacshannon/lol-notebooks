@@ -47,3 +47,7 @@ Nov. 19th
     BS was increased from 32 -> 64 and LR returned to 1e-3. Goota go to bed, will test tomorrow.
 Nov. 2nd
     Non-blended predictions look pretty decent
+
+Jan. 18th
+    DUal team predictions are confusing and difficult to predict. Going to remodel using a 5x5 grid instead of 10x10,
+    and no distinction between teams.

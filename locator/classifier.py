@@ -7,7 +7,7 @@ import random
 grid_size = 10
 grid_lines = int(150 / grid_size)
 
-source_dir = "./newdata/split"
+source_dir = "./newdata/newplayers"
 dest_dir = "./newdata/train"
 
 
@@ -102,8 +102,4 @@ blue_red_btn.pack()
 undo_btn = tk.Button(root, text="Undo", command=undo)
 undo_btn.pack()
 
-with open("./coordinates.csv", "a") as csv_file:
-    writer = csv.writer(csv_file, delimiter=',')
-    root.writer = writer
-
-    root.mainloop()
+root.mainloop()
