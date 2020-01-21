@@ -19,26 +19,11 @@ def next_img(dest):
     map_name_label.configure(text=img)
 
 
-def blue():
+def player():
     img = root.image_list[root.img_index]
-    dest = f"{dest_dir}/blue/{img}"
+    dest = f"{dest_dir}/player/{img}"
     os.rename(f"{source_dir}/{img}", dest)
     next_img(dest)
-
-
-def red():
-    img = root.image_list[root.img_index]
-    dest = f"{dest_dir}/red/{img}"
-    os.rename(f"{source_dir}/{img}", dest)
-    next_img(dest)
-
-
-def blue_red():
-    img = root.image_list[root.img_index]
-    dest = f"{dest_dir}/blue-red/{img}"
-    os.rename(f"{source_dir}/{img}", dest)
-    next_img(dest)
-
 
 def terrain():
     img = root.image_list[root.img_index]
