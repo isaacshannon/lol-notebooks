@@ -27,8 +27,8 @@ def make_dirs(directory):
 
 
 def capture():
-    teams = "ig_tl_1_worlds_oct_20_2019"
-    num_shots = 900
+    teams = "lec_2020_mad_xl"
+    num_shots = 1400
     directory = "games/" + teams
     make_dirs(directory)
     if len(os.listdir(directory)) > 100:
@@ -39,16 +39,18 @@ def capture():
     for i in range(num_shots):
         seq = format(i, '010d')
 
-        # full_x = random.randrange(800, 806)
-        # full_y = random.randrange(572, 578)
-        full_x = random.randrange(835, 841)
-        full_y = random.randrange(583, 589)
-        im_full = pyscreenshot.grab(bbox=(full_x, full_y, full_x + 150, full_y + 150))
+        x = 1440
+        min_x = random.randrange(x, x+6)
+        y = 765
+        min_y = random.randrange(y, y+6)
+        im_full = pyscreenshot.grab(bbox=(min_x, min_y, min_x + 150, min_y + 150))
         im_full.save(f"{directory}/full/{teams}_{seq}.png")
 
-        team_x = random.randrange(1746, 1754)
-        team_y = random.randrange(576, 584)
-        im_team = pyscreenshot.grab(bbox=(team_x, team_y, team_x + 150, team_y + 150))
+        x = 1263
+        min_x = random.randrange(x, x + 6)
+        y = 720
+        min_y = random.randrange(y, y + 6)
+        im_team = pyscreenshot.grab(bbox=(min_x, min_y, min_x + 150, min_y + 150))
         im_team.save(f"{directory}/team/{teams}_{seq}.png")
 
         print(f"screenshot: {i}")
