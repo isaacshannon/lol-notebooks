@@ -7,3 +7,4 @@
 *.jpg
 *.pth
 .ipynb_checkpoints/
+/clusters_cleaned
